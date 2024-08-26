@@ -11,7 +11,7 @@ public class DepartmentRepositoryTest {
     public void InserirUmDepartamento() {
         DepartmentRepository repository = new DepartmentRepository();
         Department departmentFake = new Department();
-        departmentFake.setName("Fake Department");
+        departmentFake.setName("Teste Departament");
         repository.insert(departmentFake);
     }
     @Test
