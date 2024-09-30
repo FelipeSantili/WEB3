@@ -1,0 +1,29 @@
+CREATE TABLE author (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE book (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    date DATE NOT NULL,
+    idauthor INT NOT NULL,
+    status VARCHAR(50) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (idauthor) REFERENCES author(id)
+);
+
+INSERT INTO author (name) VALUES
+('William Shakespeare '),
+('Charles Dickens '),
+('Jane Austen'),
+('Miguel de Cervantes'),
+('Machado de Assis');
+
+INSERT INTO book (name, date, idauthor, status) VALUES
+('Romeo and Juliet', '1597-01-01', 1, 'disponível'), -- William Shakespeare
+('Great Expectations', '1861-01-01', 2, 'disponível'), -- Charles Dickens
+('Pride and Prejudice', '1813-01-28', 3, 'disponível'), -- Jane Austen
+('Don Quixote', '1605-01-16', 4, 'disponível'), -- Miguel de Cervantes
+('Dom Casmurro', '1899-01-01', 5, 'disponível'); -- Machado de Assis
